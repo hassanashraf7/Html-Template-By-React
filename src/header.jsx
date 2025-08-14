@@ -1,18 +1,24 @@
-import React from 'react';
+import { Link } from 'react-router-dom'; // Import only Link
+import './Header.css';
+import logo from './assets/logo.png'; 
 
 const Header = () => {
   return (
-    <div>
+    <div className='navigation-bar'>
+      <div className='logo'>
+        <Link to="/">
+          <img src={logo} alt='my website logo' className='logo'></img>
+        </Link>
+      </div>
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/contact">Contact Us</a></li>
+          <li><Link to="/Home">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+         
         </ul>
       </nav>
     </div>
   );
 };
 
-export default Header; 
+export default Header;
